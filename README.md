@@ -1,20 +1,6 @@
 # data-survivors
 
 # Wallstreet Watchers: Analysis of Stock Market
- 
-​The project was to find a problem worth solving, analyzing, or visualizing. Use ML in the context of technologies learned. You must use Scikit-learn and/or another machine learning library.You must use at least two of the below:
- 
- 
-Python Pandas
- 
-Python Matplotlib
- 
-Tableau
- 
- 
-Host application using Heroku or a tool of your choice.
- 
- 
 ​
 ## Background
 ​

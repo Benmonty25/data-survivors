@@ -33,16 +33,16 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='stock_list' name='textscan.1j98pnr18ixd5a1fjnpw61h79h97 (copy)'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='stock_list.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_list.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='sp500_list' name='textscan.0i6ray11hplwe014a2evd092h40x (copy)'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='sp500_list.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='sp500_list.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='1wk_stock_history' name='textscan.1l15xcn01t204f1c83ar31buq60s (copy)'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='1wk_stock_history.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_history.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='stock_history' name='textscan.1g3ynty1b90r1x1g81qmu0k6idx6 (copy)'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_history.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_history.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1l15xcn01t204f1c83ar31buq60s (copy)' name='1wk_stock_history.csv' table='[1wk_stock_history#csv]' type='table'>
@@ -631,6 +631,380 @@
           <groupfilter function='level-members' level='[Industry]' />
         </groupfilter>
       </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/bmontague/Desktop/GT Class/Project-4/All History.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9' table='[Extract].[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01' table='[Extract].[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]' type='table' />
+            <relation name='1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9' table='[Extract].[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]' type='table' />
+            <relation name='sp500_list.csv_EA57603844B848F2BF881882BC696719' table='[Extract].[sp500_list.csv_EA57603844B848F2BF881882BC696719]' type='table' />
+            <relation name='stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C' table='[Extract].[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Adj Close (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Adj Close]' />
+            <map key='[Adj Close]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Adj Close]' />
+            <map key='[Close (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Close]' />
+            <map key='[Close]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Close]' />
+            <map key='[Company]' value='[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01].[Company]' />
+            <map key='[Date (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Date]' />
+            <map key='[Date]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Date]' />
+            <map key='[Dividends (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Dividends]' />
+            <map key='[Dividends]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Dividends]' />
+            <map key='[High (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[High]' />
+            <map key='[High]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[High]' />
+            <map key='[Industry]' value='[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01].[Industry]' />
+            <map key='[Low (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Low]' />
+            <map key='[Low]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Low]' />
+            <map key='[Market Cap]' value='[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01].[Market Cap]' />
+            <map key='[Open (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Open]' />
+            <map key='[Open]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Open]' />
+            <map key='[Stock Splits (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Stock Splits]' />
+            <map key='[Stock Splits]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Stock Splits]' />
+            <map key='[Symbol (1wk_stock_history.csv)]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Symbol]' />
+            <map key='[Symbol (sp500_list.csv)]' value='[sp500_list.csv_EA57603844B848F2BF881882BC696719].[Symbol]' />
+            <map key='[Symbol (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Symbol]' />
+            <map key='[Symbol]' value='[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01].[Symbol]' />
+            <map key='[Volume (stock_history.csv)]' value='[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C].[Volume]' />
+            <map key='[Volume]' value='[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9].[Volume]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Symbol</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Symbol]</local-name>
+              <parent-name>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</parent-name>
+              <remote-alias>Symbol</remote-alias>
+              <ordinal>0</ordinal>
+              <family>stock_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6044</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Company</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Company]</local-name>
+              <parent-name>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</parent-name>
+              <remote-alias>Company</remote-alias>
+              <ordinal>1</ordinal>
+              <family>stock_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6044</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Industry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Industry]</local-name>
+              <parent-name>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</parent-name>
+              <remote-alias>Industry</remote-alias>
+              <ordinal>2</ordinal>
+              <family>stock_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>189</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Market Cap</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Market Cap]</local-name>
+              <parent-name>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</parent-name>
+              <remote-alias>Market Cap</remote-alias>
+              <ordinal>3</ordinal>
+              <family>stock_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2578</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Symbol</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Symbol (1wk_stock_history.csv)]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Symbol</remote-alias>
+              <ordinal>4</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7317</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>5</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Open</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Open]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Open</remote-alias>
+              <ordinal>6</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5717</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>High</remote-alias>
+              <ordinal>7</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6184</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Low</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Low]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Low</remote-alias>
+              <ordinal>8</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6276</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Close</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Close]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Close</remote-alias>
+              <ordinal>9</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6259</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Volume</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Volume]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Volume</remote-alias>
+              <ordinal>10</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7481</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Dividends</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Dividends]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Dividends</remote-alias>
+              <ordinal>11</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>106</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Stock Splits</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Stock Splits]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Stock Splits</remote-alias>
+              <ordinal>12</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adj Close</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Adj Close]</local-name>
+              <parent-name>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</parent-name>
+              <remote-alias>Adj Close</remote-alias>
+              <ordinal>13</ordinal>
+              <family>1wk_stock_history.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Symbol</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Symbol (sp500_list.csv)]</local-name>
+              <parent-name>[sp500_list.csv_EA57603844B848F2BF881882BC696719]</parent-name>
+              <remote-alias>Symbol</remote-alias>
+              <ordinal>14</ordinal>
+              <family>sp500_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>505</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Symbol</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Symbol (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Symbol</remote-alias>
+              <ordinal>15</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6643</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>16</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>27382</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Open</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Open (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Open</remote-alias>
+              <ordinal>17</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3184675</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>High</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[High (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>High</remote-alias>
+              <ordinal>18</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3335203</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Low</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Low (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Low</remote-alias>
+              <ordinal>19</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3305526</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Close</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Close (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Close</remote-alias>
+              <ordinal>20</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3036845</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Volume</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Volume (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Volume</remote-alias>
+              <ordinal>21</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>493063</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Dividends</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Dividends (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Dividends</remote-alias>
+              <ordinal>22</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15132</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Stock Splits</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Stock Splits (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Stock Splits</remote-alias>
+              <ordinal>23</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1265</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Adj Close</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Adj Close (stock_history.csv)]</local-name>
+              <parent-name>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</parent-name>
+              <remote-alias>Adj Close</remote-alias>
+              <ordinal>24</ordinal>
+              <family>stock_history.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='100' show-structure='true' />
       <style>
         <style-rule element='mark'>
@@ -19255,6 +19629,9 @@ Investment Trusts...&quot;</bucket>
                 </columns>
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9' table='[Extract].[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]' type='table' />
+            </properties>
           </object>
           <object caption='sp500_list.csv' id='sp500_list.csv_EA57603844B848F2BF881882BC696719'>
             <properties context=''>
@@ -19263,6 +19640,9 @@ Investment Trusts...&quot;</bucket>
                   <column datatype='string' name='Symbol' ordinal='0' />
                 </columns>
               </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='sp500_list.csv_EA57603844B848F2BF881882BC696719' table='[Extract].[sp500_list.csv_EA57603844B848F2BF881882BC696719]' type='table' />
             </properties>
           </object>
           <object caption='stock_history.csv' id='stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C'>
@@ -19282,6 +19662,9 @@ Investment Trusts...&quot;</bucket>
                 </columns>
               </relation>
             </properties>
+            <properties context='extract'>
+              <relation name='stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C' table='[Extract].[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]' type='table' />
+            </properties>
           </object>
           <object caption='stock_list.csv' id='stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01'>
             <properties context=''>
@@ -19293,6 +19676,9 @@ Investment Trusts...&quot;</bucket>
                   <column datatype='string' name='Market Cap' ordinal='3' />
                 </columns>
               </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01' table='[Extract].[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]' type='table' />
             </properties>
           </object>
         </objects>
@@ -19328,16 +19714,16 @@ Investment Trusts...&quot;</bucket>
       <connection class='federated'>
         <named-connections>
           <named-connection caption='1wk_stock_history' name='textscan.1l15xcn01t204f1c83ar31buq60s'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='1wk_stock_history.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='1wk_stock_history.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='sp500_list' name='textscan.0i6ray11hplwe014a2evd092h40x'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='sp500_list.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='sp500_list.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='stock_history' name='textscan.1g3ynty1b90r1x1g81qmu0k6idx6'>
-            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_history.csv' password='' server='' />
+            <connection class='textscan' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='stock_history.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='stock_list' name='textscan.1j98pnr18ixd5a1fjnpw61h79h97'>
-            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/bmontague/Desktop/GT Class/Project-4/Output/stock_list.csv' dataRefreshTime='' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/data-survivors/Output' filename='stock_list.csv' interpretationMode='8' password='' server='' validate='no' />
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/bmontague/Desktop/GT Class/Project-4/Output/stock_list.csv' dataRefreshTime='' directory='C:/Users/bmontague/Desktop/GT Class/Project-4/Output' filename='C:/Users/BMONTA~1/AppData/Local/Temp/TableauTemp/1soado4088ph9p1axys1m0le8m1s/stock_list.csv.xlsx' interpretationMode='8' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1l15xcn01t204f1c83ar31buq60s' name='1wk_stock_history.csv' table='[C:\Users\bmontague\Desktop\GT Class\Project-4\Output\1wk_stock_history#csv]' type='table'>
@@ -19446,7 +19832,6 @@ Investment Trusts...&quot;</bucket>
           <map key='[Volume (stock_history.csv)]' value='[stock_history.csv].[Volume]' />
           <map key='[Volume]' value='[1wk_stock_history.csv].[Volume]' />
         </cols>
-        <refresh increment-key='' incremental-updates='false' />
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
@@ -20209,7 +20594,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>6044</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Company</remote-name>
@@ -20221,10 +20605,9 @@ Investment Trusts...&quot;</bucket>
               <family>stock_list.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>6044</approx-count>
+              <approx-count>5834</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Industry</remote-name>
@@ -20239,7 +20622,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>189</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Market Cap</remote-name>
@@ -20251,10 +20633,9 @@ Investment Trusts...&quot;</bucket>
               <family>stock_list.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>2578</approx-count>
+              <approx-count>2542</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_list.csv_56284EA7AF3E4AA98A02C3736A5E3A01]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Symbol</remote-name>
@@ -20266,10 +20647,9 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>7317</approx-count>
+              <approx-count>7882</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Date</remote-name>
@@ -20281,9 +20661,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>date</local-type>
               <aggregation>Year</aggregation>
-              <approx-count>9</approx-count>
+              <approx-count>6</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Open</remote-name>
@@ -20295,9 +20674,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>5717</approx-count>
+              <approx-count>6136</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>High</remote-name>
@@ -20309,9 +20687,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>6184</approx-count>
+              <approx-count>6579</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Low</remote-name>
@@ -20323,9 +20700,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>6276</approx-count>
+              <approx-count>7206</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Close</remote-name>
@@ -20337,9 +20713,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>6259</approx-count>
+              <approx-count>6083</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Volume</remote-name>
@@ -20351,9 +20726,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>7481</approx-count>
+              <approx-count>7846</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Dividends</remote-name>
@@ -20365,9 +20739,8 @@ Investment Trusts...&quot;</bucket>
               <family>1wk_stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>106</approx-count>
+              <approx-count>183</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Stock Splits</remote-name>
@@ -20381,7 +20754,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Adj Close</remote-name>
@@ -20396,7 +20768,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[1wk_stock_history.csv_E6AE54D6408A499192666C2DA96CFED9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>F1</remote-name>
@@ -20411,7 +20782,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>F2</remote-name>
@@ -20426,7 +20796,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>KNN</remote-name>
@@ -20440,7 +20809,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1114</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Logistic Regression</remote-name>
@@ -20454,7 +20822,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1061</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Random Forest</remote-name>
@@ -20468,7 +20835,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1063</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>SGD Classifier</remote-name>
@@ -20482,7 +20848,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1110</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>SVM</remote-name>
@@ -20496,7 +20861,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>979</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Average Accuracy</remote-name>
@@ -20510,7 +20874,6 @@ Investment Trusts...&quot;</bucket>
               <aggregation>Sum</aggregation>
               <approx-count>1451</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Symbol</remote-name>
@@ -20525,7 +20888,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>5899</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[accuracy.csv_1B39FD32C7E946D4B3517669A7FB4144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Symbol</remote-name>
@@ -20540,7 +20902,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>505</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[sp500_list.csv_EA57603844B848F2BF881882BC696719]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Symbol</remote-name>
@@ -20552,10 +20913,9 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>6657</approx-count>
+              <approx-count>6271</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Date</remote-name>
@@ -20567,9 +20927,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>date</local-type>
               <aggregation>Year</aggregation>
-              <approx-count>28838</approx-count>
+              <approx-count>28159</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Open</remote-name>
@@ -20581,9 +20940,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>3265328</approx-count>
+              <approx-count>3200916</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>High</remote-name>
@@ -20595,9 +20953,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>3385458</approx-count>
+              <approx-count>3355029</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Low</remote-name>
@@ -20609,9 +20966,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>3354831</approx-count>
+              <approx-count>3322391</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Close</remote-name>
@@ -20623,9 +20979,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>3102932</approx-count>
+              <approx-count>3082401</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Volume</remote-name>
@@ -20637,9 +20992,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>514525</approx-count>
+              <approx-count>482936</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Dividends</remote-name>
@@ -20651,9 +21005,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>21964</approx-count>
+              <approx-count>13930</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Stock Splits</remote-name>
@@ -20665,9 +21018,8 @@ Investment Trusts...&quot;</bucket>
               <family>stock_history.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>16</approx-count>
+              <approx-count>30</approx-count>
               <contains-null>true</contains-null>
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Adj Close</remote-name>
@@ -20682,7 +21034,6 @@ Investment Trusts...&quot;</bucket>
               <approx-count>1</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stock_history.csv_CAB390EF7BE04DBEB9F5374920BFCE1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -39298,7 +39649,7 @@ Investment Trusts...&quot;</bucket>
               <bucket>&quot;ZW Data Action Technologies&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:Calculation_4334996158305058829:ok]' type='palette'>
+          <encoding attr='color' field='[max:Calculation_4334996158305058829:ok]' type='palette'>
             <map to='#4e79a7'>
               <bucket>%null%</bucket>
             </map>
@@ -39309,7 +39660,7 @@ Investment Trusts...&quot;</bucket>
               <bucket>0</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[max:Calculation_4334996158305058829:ok]' type='palette'>
+          <encoding attr='color' field='[none:Calculation_4334996158305058829:ok]' type='palette'>
             <map to='#4e79a7'>
               <bucket>%null%</bucket>
             </map>
@@ -39566,16 +39917,17 @@ Investment Trusts...&quot;</bucket>
             </dictionary>
           </manual-sort>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Company]' member='&quot;Agilent Technologies&quot;' />
-              <groupfilter function='crossjoin'>
-                <groupfilter function='member' level='[Industry]' member='&quot;Life Sciences Tools &amp; Services&quot;' />
-                <groupfilter function='member' level='[Symbol]' member='&quot;A&quot;' />
-              </groupfilter>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Company]' />
+              <groupfilter function='level-members' level='[Industry]' />
+              <groupfilter function='level-members' level='[Symbol]' />
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Industry:nk]'>
-            <groupfilter function='level-members' level='[none:Industry:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter from='&quot;Advertising Agencies&quot;' function='range' level='[none:Industry:nk]' to='&quot;Multiline Retail&quot;' />
+              <groupfilter from='&quot;Oil &amp; Gas Drilling&quot;' function='range' level='[none:Industry:nk]' to='&quot;Wireless Telecommunication Services&quot;' />
+            </groupfilter>
           </filter>
           <shelf-sorts>
             <shelf-sort-v2 dimension-to-sort='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Industry:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[avg:Average Accuracy:qk]' shelf='rows' />
@@ -39669,12 +40021,10 @@ Investment Trusts...&quot;</bucket>
             <column-instance column='[Calculation_4334996158287765514]' derivation='Sum' name='[sum:Calculation_4334996158287765514:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Company]' member='&quot;Agilent Technologies&quot;' />
-              <groupfilter function='crossjoin'>
-                <groupfilter function='member' level='[Industry]' member='&quot;Life Sciences Tools &amp; Services&quot;' />
-                <groupfilter function='member' level='[Symbol]' member='&quot;A&quot;' />
-              </groupfilter>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Company]' />
+              <groupfilter function='level-members' level='[Industry]' />
+              <groupfilter function='level-members' level='[Symbol]' />
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Industry)]'>
@@ -40090,12 +40440,10 @@ Investment Trusts...&quot;</bucket>
             <column-instance column='[Calculation_4334996158320504847]' derivation='Sum' name='[sum:Calculation_4334996158320504847:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Company]' member='&quot;Agilent Technologies&quot;' />
-              <groupfilter function='crossjoin'>
-                <groupfilter function='member' level='[Industry]' member='&quot;Life Sciences Tools &amp; Services&quot;' />
-                <groupfilter function='member' level='[Symbol]' member='&quot;A&quot;' />
-              </groupfilter>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Company]' />
+              <groupfilter function='level-members' level='[Industry]' />
+              <groupfilter function='level-members' level='[Symbol]' />
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Industry)]'>
@@ -40203,14 +40551,10 @@ Investment Trusts...&quot;</bucket>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Industry)]'>
             <groupfilter function='level-members' level='[Industry]' user:ui-action-filter='[Action1_88774EE2AAEE40FE9674C37F0693D7E9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <filter class='quantitative' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]' included-values='in-range'>
-            <min>#2000-01-01 00:00:00#</min>
-          </filter>
           <slices>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Industry)]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Company)]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Company,Industry)]</column>
-            <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -40252,26 +40596,32 @@ Investment Trusts...&quot;</bucket>
             <datasource caption='1wk History' name='federated.0wh4eo71f9nrja1cpr5rh1d6ig8r' />
           </datasources>
           <datasource-dependencies datasource='federated.0wh4eo71f9nrja1cpr5rh1d6ig8r'>
+            <column caption='Last Date' datatype='boolean' name='[Calculation_4334996158302011403]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Date]={MAX([Date])}' />
+            </column>
             <column datatype='real' default-format='C1033%' name='[Close]' role='measure' type='quantitative' />
             <column datatype='string' name='[Company]' role='dimension' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
             <column datatype='string' name='[Industry]' role='dimension' type='nominal' />
             <column datatype='string' name='[Symbol]' role='dimension' type='nominal' />
-            <column-instance column='[Company]' derivation='None' name='[none:Company:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_4334996158302011403]' derivation='None' name='[none:Calculation_4334996158302011403:nk]' pivot='key' type='nominal' />
             <column-instance column='[Close]' derivation='Sum' name='[sum:Close:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Company]' member='&quot;Agilent Technologies&quot;' />
-              <groupfilter function='crossjoin'>
-                <groupfilter function='member' level='[Industry]' member='&quot;Life Sciences Tools &amp; Services&quot;' />
-                <groupfilter function='member' level='[Symbol]' member='&quot;A&quot;' />
-              </groupfilter>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Company]' />
+              <groupfilter function='level-members' level='[Industry]' />
+              <groupfilter function='level-members' level='[Symbol]' />
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Industry)]'>
             <groupfilter function='level-members' level='[Industry]' user:ui-action-filter='[Action6_32955497BFCA4740AF770A61FD25892E]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
+          <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Calculation_4334996158302011403:nk]'>
+            <groupfilter function='member' level='[none:Calculation_4334996158302011403:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
           <slices>
+            <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Calculation_4334996158302011403:nk]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Industry)]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]</column>
           </slices>
@@ -40279,9 +40629,10 @@ Investment Trusts...&quot;</bucket>
         </view>
         <style>
           <style-rule element='cell'>
+            <format attr='height' value='62' />
+            <format attr='width' value='160' />
             <format attr='border-width' scope='cols' value='0' />
             <format attr='border-style' scope='cols' value='none' />
-            <format attr='font-size' field='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[sum:Close:qk]' value='18' />
           </style-rule>
           <style-rule element='header'>
             <format attr='border-width' scope='cols' value='0' />
@@ -40311,18 +40662,42 @@ Investment Trusts...&quot;</bucket>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Text' />
             <encodings>
               <text column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[sum:Close:qk]' />
             </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878' fontsize='10'>Max. Up/down:&#9;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878' fontsize='10'>Close:&#9;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='18'>&lt;</run>
+                <run fontsize='18'>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[sum:Close:qk]</run>
+                <run fontsize='18'>&gt;</run>
+              </formatted-text>
+            </customized-label>
             <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
               <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
                 <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
               </style-rule>
             </style>
           </pane>
         </panes>
-        <rows>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Company:nk]</rows>
+        <rows />
         <cols />
       </table>
       <simple-id uuid='{057EFD57-9577-4B88-8776-37E4906BF4A4}' />
@@ -40353,7 +40728,7 @@ Investment Trusts...&quot;</bucket>
             <column-instance column='[Open (stock_history.csv)]' derivation='Avg' name='[avg:Open (stock_history.csv):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Company]' derivation='None' name='[none:Company:nk]' pivot='key' type='nominal' />
             <column-instance column='[Industry]' derivation='None' name='[none:Industry:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Date (stock_history.csv)]' derivation='Month-Trunc' name='[tmn:Date (stock_history.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date (stock_history.csv)]' derivation='Year' name='[yr:Date (stock_history.csv):ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Company)]'>
             <groupfilter function='level-members' level='[Company]' user:ui-action-filter='[Action2_E631CA407D2F4D16AE33BB88BACC55BF]' user:ui-enumeration='all' user:ui-marker='enumerate' />
@@ -40370,16 +40745,11 @@ Investment Trusts...&quot;</bucket>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Industry:nk]'>
             <groupfilter function='level-members' level='[none:Industry:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <filter class='quantitative' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]' included-values='in-range'>
-            <min>#2000-01-01 00:00:00#</min>
-            <max>#2021-11-01 00:00:00#</max>
-          </filter>
           <slices>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Company)]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Company:nk]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Industry:nk]</column>
             <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[Action (Company,Industry)]</column>
-            <column>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -40387,7 +40757,6 @@ Investment Trusts...&quot;</bucket>
           <style-rule element='axis'>
             <format attr='title' class='0' field='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[avg:Low (stock_history.csv):qk]' scope='rows' value='Price' />
             <encoding attr='space' class='0' field='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[avg:Open (stock_history.csv):qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
-            <format attr='title' class='0' field='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]' scope='cols' value='Month Year' />
           </style-rule>
           <style-rule element='header'>
             <format attr='font-weight' data-class='subtotal' field='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Company:nk]' value='bold' />
@@ -40443,7 +40812,7 @@ Investment Trusts...&quot;</bucket>
           </pane>
         </panes>
         <rows>([federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[avg:Low (stock_history.csv):qk] + [federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[avg:Open (stock_history.csv):qk])</rows>
-        <cols>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[tmn:Date (stock_history.csv):qk]</cols>
+        <cols>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[yr:Date (stock_history.csv):ok]</cols>
       </table>
       <simple-id uuid='{DDDEAACB-6A84-43A3-B6CF-32871F69A1B1}' />
     </worksheet>
@@ -40571,12 +40940,10 @@ Investment Trusts...&quot;</bucket>
             <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-              <groupfilter function='member' level='[Company]' member='&quot;Agilent Technologies&quot;' />
-              <groupfilter function='crossjoin'>
-                <groupfilter function='member' level='[Industry]' member='&quot;Life Sciences Tools &amp; Services&quot;' />
-                <groupfilter function='member' level='[Symbol]' member='&quot;A&quot;' />
-              </groupfilter>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Company]' />
+              <groupfilter function='level-members' level='[Industry]' />
+              <groupfilter function='level-members' level='[Symbol]' />
             </groupfilter>
           </filter>
           <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Industry)]'>
@@ -40670,8 +41037,8 @@ Investment Trusts...&quot;</bucket>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='900' minheight='900' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='38' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='41' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='40' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone fixed-size='280' h='49000' id='13' is-fixed='true' name='Daily Average Change' w='49199' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -40724,10 +41091,10 @@ Investment Trusts...&quot;</bucket>
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98142' id='25' param='horz' type-v2='layout-flow' w='99034' x='483' y='929'>
-            <zone h='98142' id='19' param='horz' type-v2='layout-flow' w='89378' x='483' y='929'>
-              <zone h='98142' id='14' type-v2='layout-basic' w='89378' x='483' y='929'>
-                <zone h='49071' id='3' name='Industry Average over Time' w='89378' x='483' y='50000'>
+          <zone h='98188' id='25' param='horz' type-v2='layout-flow' w='99034' x='483' y='906'>
+            <zone h='98188' id='19' param='horz' type-v2='layout-flow' w='89378' x='483' y='906'>
+              <zone h='98188' id='14' type-v2='layout-basic' w='89378' x='483' y='906'>
+                <zone h='49094' id='3' name='Industry Average over Time' w='89378' x='483' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -40735,7 +41102,7 @@ Investment Trusts...&quot;</bucket>
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone h='49071' id='13' name='Companies by Industry and Size' w='30958' x='483' y='929'>
+                <zone h='49094' id='13' name='Companies by Industry and Size' w='30958' x='483' y='906'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -40743,7 +41110,7 @@ Investment Trusts...&quot;</bucket>
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone h='49071' id='17' name='S&amp;P Average Price Over Time' w='58420' x='31441' y='929'>
+                <zone h='49094' id='17' name='S&amp;P Average Price Over Time' w='58420' x='31441' y='906'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -40753,8 +41120,8 @@ Investment Trusts...&quot;</bucket>
                 </zone>
               </zone>
             </zone>
-            <zone fixed-size='160' h='98142' id='24' is-fixed='true' param='vert' type-v2='layout-flow' w='9656' x='89861' y='929'>
-              <zone h='6852' id='26' mode='dropdown' name='S&amp;P Average Price Over Time' param='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Industry:nk]' type-v2='filter' values='database' w='9656' x='89861' y='929'>
+            <zone fixed-size='160' h='98188' id='24' is-fixed='true' param='vert' type-v2='layout-flow' w='9656' x='89861' y='906'>
+              <zone h='6116' id='26' mode='dropdown' name='S&amp;P Average Price Over Time' param='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Industry:nk]' type-v2='filter' values='database' w='9656' x='89861' y='906'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -40762,7 +41129,7 @@ Investment Trusts...&quot;</bucket>
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='91290' id='29' name='Industry Average over Time' pane-specification-id='3' param='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Company:nk]' type-v2='color' w='9656' x='89861' y='7781'>
+              <zone h='92072' id='29' name='Industry Average over Time' pane-specification-id='3' param='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r (copy)].[none:Company:nk]' type-v2='color' w='9656' x='89861' y='7022'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -40784,8 +41151,8 @@ Investment Trusts...&quot;</bucket>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='36' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='38' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='49094' id='13' is-fixed='true' name='Companies by Industry and Size' w='30958' x='483' y='906'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -40919,8 +41286,8 @@ Investment Trusts...&quot;</bucket>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='27' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='26' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='28' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='40750' id='18' is-fixed='true' name='Best Industries for Machine Learning' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -41013,86 +41380,59 @@ Investment Trusts...&quot;</bucket>
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98142' id='1' param='vert' removable='false' type-v2='layout-flow' w='99034' x='483' y='929'>
-            <zone h='5691' id='3' type-v2='title' w='99034' x='483' y='929' />
-            <zone h='11731' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99034' x='483' y='6620' />
-            <zone h='80720' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99034' x='483' y='18351'>
+          <zone h='98188' id='1' param='vert' removable='false' type-v2='layout-flow' w='99034' x='483' y='906'>
+            <zone h='5549' id='3' type-v2='title' w='99034' x='483' y='906' />
+            <zone h='11438' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99034' x='483' y='6455' />
+            <zone h='81201' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99034' x='483' y='17893'>
               <flipboard active-id='3' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='Main Page' captured-sheet='Main Page' id='3'>
                     <currentDeltas>
                       <worksheet name='Best Industries for Machine Learning'>
                         <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-                            <groupfilter function='member' level='[Company]' member='&quot;American Airlines&quot;' />
-                            <groupfilter function='crossjoin'>
-                              <groupfilter function='member' level='[Industry]' member='&quot;Airlines&quot;' />
-                              <groupfilter function='member' level='[Symbol]' member='&quot;AAL&quot;' />
-                            </groupfilter>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[Company]' />
+                            <groupfilter function='level-members' level='[Industry]' />
+                            <groupfilter function='level-members' level='[Symbol]' />
                           </groupfilter>
-                        </filter>
-                        <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Industry:nk]'>
-                          <groupfilter function='level-members' level='[none:Industry:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
                         </filter>
                       </worksheet>
                       <worksheet name='Change'>
                         <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-                            <groupfilter function='member' level='[Company]' member='&quot;American Airlines&quot;' />
-                            <groupfilter function='crossjoin'>
-                              <groupfilter function='member' level='[Industry]' member='&quot;Airlines&quot;' />
-                              <groupfilter function='member' level='[Symbol]' member='&quot;AAL&quot;' />
-                            </groupfilter>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[Company]' />
+                            <groupfilter function='level-members' level='[Industry]' />
+                            <groupfilter function='level-members' level='[Symbol]' />
                           </groupfilter>
                         </filter>
                       </worksheet>
                       <worksheet name='Customer List'>
-                        <selection-collection>
-                          <node-selection select-tuples='false'>
-                            <oriented-node-reference orientation='vertical'>
-                              <node-reference>
-                                <fields>
-                                  <field>[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[none:Symbol:nk]</field>
-                                </fields>
-                                <multibucket>
-                                  <bucket>&quot;AAL&quot;</bucket>
-                                </multibucket>
-                              </node-reference>
-                              <page-reference />
-                            </oriented-node-reference>
-                          </node-selection>
-                        </selection-collection>
+                        <selection-collection />
                       </worksheet>
                       <worksheet name='Difference'>
                         <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-                            <groupfilter function='member' level='[Company]' member='&quot;American Airlines&quot;' />
-                            <groupfilter function='crossjoin'>
-                              <groupfilter function='member' level='[Industry]' member='&quot;Airlines&quot;' />
-                              <groupfilter function='member' level='[Symbol]' member='&quot;AAL&quot;' />
-                            </groupfilter>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[Company]' />
+                            <groupfilter function='level-members' level='[Industry]' />
+                            <groupfilter function='level-members' level='[Symbol]' />
                           </groupfilter>
                         </filter>
                       </worksheet>
                       <worksheet name='Last Price'>
                         <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-                            <groupfilter function='member' level='[Company]' member='&quot;American Airlines&quot;' />
-                            <groupfilter function='crossjoin'>
-                              <groupfilter function='member' level='[Industry]' member='&quot;Airlines&quot;' />
-                              <groupfilter function='member' level='[Symbol]' member='&quot;AAL&quot;' />
-                            </groupfilter>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[Company]' />
+                            <groupfilter function='level-members' level='[Industry]' />
+                            <groupfilter function='level-members' level='[Symbol]' />
                           </groupfilter>
                         </filter>
                       </worksheet>
                       <worksheet name='Weekly Progress'>
                         <filter class='categorical' column='[federated.0wh4eo71f9nrja1cpr5rh1d6ig8r].[Action (Company,Industry,Symbol)]'>
-                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-                            <groupfilter function='member' level='[Company]' member='&quot;American Airlines&quot;' />
-                            <groupfilter function='crossjoin'>
-                              <groupfilter function='member' level='[Industry]' member='&quot;Airlines&quot;' />
-                              <groupfilter function='member' level='[Symbol]' member='&quot;AAL&quot;' />
-                            </groupfilter>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action6_D941D5D164E2468BA7C225DAC6680841]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[Company]' />
+                            <groupfilter function='level-members' level='[Industry]' />
+                            <groupfilter function='level-members' level='[Symbol]' />
                           </groupfilter>
                         </filter>
                       </worksheet>
@@ -41116,7 +41456,7 @@ Investment Trusts...&quot;</bucket>
       <simple-id uuid='{B7E4F8F1-F4CC-465A-A1A5-6049A5CB7684}' />
     </dashboard>
   </dashboards>
-  <windows saved-dpi-scale-factor='1.25' source-height='51'>
+  <windows source-height='51'>
     <window class='worksheet' name='Daily Open-Close Diff'>
       <cards>
         <edge name='left'>
@@ -41288,7 +41628,7 @@ Investment Trusts...&quot;</bucket>
       </cards>
       <simple-id uuid='{0B4358F9-9D10-4747-8037-F614C310EE08}' />
     </window>
-    <window class='worksheet' maximized='true' name='Last Price'>
+    <window class='worksheet' name='Last Price'>
       <cards>
         <edge name='left'>
           <strip size='200'>
@@ -41401,7 +41741,7 @@ Investment Trusts...&quot;</bucket>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='8' />
+      <active id='-1' />
       <simple-id uuid='{D823954D-75B7-4A86-939D-DC58807D841F}' />
     </window>
     <window class='worksheet' name='Industry Average over Time'>
@@ -41464,12 +41804,12 @@ Investment Trusts...&quot;</bucket>
         </viewpoint>
         <viewpoint name='S&amp;P Average Price Over Time' />
       </viewpoints>
-      <active id='13' />
+      <active id='-1' />
       <simple-id uuid='{DA33F57D-E5CB-4BB8-80BB-F609A15C8EA4}' />
     </window>
-    <window class='dashboard' name='WallStreet Watcher'>
+    <window class='dashboard' maximized='true' name='WallStreet Watcher'>
       <viewpoints />
-      <active id='5' />
+      <active id='-1' />
       <simple-id uuid='{F8E53A16-F9C8-4A9A-8433-D4B54AF6A9BD}' />
     </window>
   </windows>
